@@ -53,8 +53,8 @@ Primera etapa: documentación inicial, definición de objetivos, alcance funcion
 | 17/05/2026 | 3571b8a | Agregando contenido al README y un identificador | N1sse |
 | 17/05/2026 | 12ef05c | Actualizando la imagen para evitar problemas de visualización | N1sse |
 | 17/05/2026 | f4d18b1 | Agregando la estructura de archivos y proyecto base del backend | N1sse |
-| 17/05/2026 | f4d18b1 | Se actualizó parte de la información de la bitácora y se agregaron al README los commits realizados previamente
- | N1sse |
+| 17/05/2026 | 9af946a | Se actualizó parte de la información de la bitácora y se agregaron al README los commits realizados previamente| N1sse |
+| 30/05/2026 | 420b876 | Agrege la carpeta del dto y actualicé el README | N1sse |
 
 ---
 
