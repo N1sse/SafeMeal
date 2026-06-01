@@ -48,8 +48,13 @@ Primera etapa: documentación inicial, definición de objetivos, alcance funcion
 
 | Fecha | Hash | Mensaje de commit | Autor |
 |-------|------|-------------------|-------|
-| 17/05/2026 | ad30c3e | primer commit | N1sse |
+| 17/05/2026 | ad30c3e | Primer commit del proyecto | N1sse |
 | 17/05/2026 | fb56f05 | Agrega estructura inicial de carpetas como lo indica el enunciado | N1sse |
+| 17/05/2026 | 3571b8a | Agregando contenido al README y un identificador | N1sse |
+| 17/05/2026 | 12ef05c | Actualizando la imagen para evitar problemas de visualización | N1sse |
+| 17/05/2026 | f4d18b1 | Agregando la estructura de archivos y proyecto base del backend | N1sse |
+| 17/05/2026 | 9af946a | Se actualizó parte de la información de la bitácora y se agregaron al README los commits realizados previamente| N1sse |
+| 30/05/2026 | 420b876 | Agrege la carpeta del dto y actualicé el README | N1sse |
 
 ---
 
