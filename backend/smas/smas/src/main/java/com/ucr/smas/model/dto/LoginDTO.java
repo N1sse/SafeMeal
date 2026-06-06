@@ -6,11 +6,11 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 public class LoginDTO {
-    @Email(message = "Este correo electrónico es incorrecto.")
-    @NotBlank(message = "El espacio del correo no puede quedar vacio")
+    @Email(message = "Este correo electrónico es inválido.")
+    @NotBlank(message = "El espacio del correo no puede quedar vacío")
     private String email;
 
-    @NotBlank(message = "Esta contraseña es incorrecta.")
+    @NotBlank(message = "El espacio de la contraseña no puede quedar vacío.")
     @Size(min = 8, max = 64, message = "La contraseña debe tener entre 8 y 64 caracteres.")
     private String password;
 

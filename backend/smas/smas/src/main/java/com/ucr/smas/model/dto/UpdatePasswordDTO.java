@@ -6,9 +6,6 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 public class UpdatePasswordDTO {
-    @Email(message = "Por favor, ingrese un correo electrónico válido.")
-    @NotBlank(message = "El espacio del correo no puede quedar vacio")
-    private String email;
 
     @NotBlank(message = "Por favor, ingrese la nueva contraseña. Este campo es obligatorio.")
     @Size(min = 8, max = 64, message = "La nueva contraseña debe tener entre 8 y 64 caracteres.")
@@ -21,17 +18,8 @@ public class UpdatePasswordDTO {
     public UpdatePasswordDTO() {
     }
 
-    public UpdatePasswordDTO(String email, String password) {
-        this.email = email;
+    public UpdatePasswordDTO( String password) {
         this.password = password;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getPassword() {
