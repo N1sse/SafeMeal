@@ -10,11 +10,11 @@ public class UpdatePasswordDTO {
     @NotBlank(message = "El espacio del correo no puede quedar vacio")
     private String email;
 
-    @NotBlank(message = "La contraseña es obligatoria.")
-    @Size(min = 8, max = 64, message = "La contraseña debe tener entre 8 y 64 caracteres.")
+    @NotBlank(message = "Por favor, ingrese la nueva contraseña. Este campo es obligatorio.")
+    @Size(min = 8, max = 64, message = "La nueva contraseña debe tener entre 8 y 64 caracteres.")
     @Pattern(
             regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[.,+?!*#$@%&()_\\-={}\\[\\]:;<>/]).+$",
-            message = "La contraseña debe tener un mínimo de 8caracteres; otras consideraciones es que la contraseña debe de tener al menos una minúscula, una mayúscula, un número, un carácter especial."
+            message = "La nueva contraseña debe incluir al menos una minúscula, una mayúscula, un número y un carácter especial."
     )
     private String password;
 

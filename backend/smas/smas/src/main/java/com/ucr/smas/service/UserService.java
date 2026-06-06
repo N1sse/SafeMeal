@@ -102,7 +102,7 @@ public class UserService {
     }
 
     //---Para cambiar la contraseña
-    public User updatePassword(String email, String newPassword) {
+    public User updatePassword(String email, UpdatePasswordDTO newPassword) {
         if (email == null || newPassword == null) {
             return null;
         }
@@ -110,7 +110,7 @@ public class UserService {
         Optional<User> userExists = userRepository.findByEmail(email);
         if (userExists.isPresent()) {
             User userTemp = userExists.get();
-            userTemp.setPassword(newPassword);
+            userTemp.setPassword(newPassword.getPassword());
             return userRepository.save(userTemp);
         }
         return null;
