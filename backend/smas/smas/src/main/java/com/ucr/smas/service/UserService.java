@@ -102,24 +102,18 @@ public class UserService {
     }
 
     //---Para cambiar la contraseña
-    public User updatePassword(UpdatePasswordDTO request){
-        if (request.getEmail()==null||request.getPassword()==null){
-            return  null;
-        }
-
-        Optional<User> userExists = userRepository.findByEmail(request.getEmail());
-        if (userExists.isPresent()){
-            User userTemp = userExists.get();
-            userTemp.setPassword(request.getPassword());
-            return userRepository.save(userTemp);
-        }else {
+    public User updatePassword(String email, String newPassword) {
+        if (email == null || newPassword == null) {
             return null;
         }
-    }
 
-    //---Obtener por email
-    public  User getUserByEmail(String email){
-        return userRepository.getByEmail(email);
+        Optional<User> userExists = userRepository.findByEmail(email);
+        if (userExists.isPresent()) {
+            User userTemp = userExists.get();
+            userTemp.setPassword(newPassword);
+            return userRepository.save(userTemp);
+        }
+        return null;
     }
 
 }
