@@ -1,6 +1,7 @@
 package com.ucr.smas.controller;
 
 import com.ucr.smas.model.User;
+import com.ucr.smas.model.dto.LoginDTO;
 import com.ucr.smas.model.dto.UpdatePasswordDTO;
 import com.ucr.smas.model.dto.UserDTO;
 import com.ucr.smas.service.UserService;
@@ -104,12 +105,34 @@ public class UserController {
             return ResponseEntity.badRequest().body(errors);
         }
 
-        User updatedUser = service.updatePassword(email, updatePassword.getPassword());
+        User updatedUser = service.updatePassword(email, updatePassword);
 
         if (updatedUser == null) {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok("Contraseña actualizada exitosamente");
     }
+
+
+    //---Post - login
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@Valid @RequestBody LoginDTO login, BindingResult result) {
+        if (result.hasErrors()) {
+            //para mostrar las validaciones del DTO
+            List<String> errors = new ArrayList<>();
+
+            for (ObjectError error : result.getAllErrors()) {
+                errors.add(error.getDefaultMessage());
+            }
+            return ResponseEntity.badRequest().body(errors);
+        }
+
+        if (service.login(login) != null) {
+            return ResponseEntity.ok("Ha iniciado sesión exitosamente");
+        }
+
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Correo o contraseña incorrectos");
+    }
+
 
 }

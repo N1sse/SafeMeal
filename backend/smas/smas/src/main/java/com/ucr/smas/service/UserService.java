@@ -1,6 +1,7 @@
 package com.ucr.smas.service;
 
 import com.ucr.smas.model.User;
+import com.ucr.smas.model.dto.LoginDTO;
 import com.ucr.smas.model.dto.UpdatePasswordDTO;
 import com.ucr.smas.model.dto.UserDTO;
 import com.ucr.smas.repository.UserJpaRepository;
@@ -113,6 +114,21 @@ public class UserService {
             userTemp.setPassword(newPassword.getPassword());
             return userRepository.save(userTemp);
         }
+        return null;
+    }
+
+    //---Para poder realizar el login
+    public User login(LoginDTO login) {
+        Optional<User> userExists = userRepository.findByEmail(login.getEmail());
+
+        if (userExists.isPresent()) {
+            User userTemp = userExists.get();
+
+            if (userTemp.getPassword().equals(login.getPassword())) {
+                return userTemp;
+            }
+        }
+
         return null;
     }
 
