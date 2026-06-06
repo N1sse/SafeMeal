@@ -13,11 +13,25 @@ public class Menu {
 
     @JoinColumn(name="user_id")
     private User user;
-   /* @JoinColumn(name="padecimientos_id")
+   @JoinColumn(name="padecimientos_id")
     private Padecimientos padecimientos;
-    */
     private String food;
     private String description;
+
+
+
+    public Menu() {
+    }
+
+
+    public Menu(Integer id, String menuName, User user, String food, String description) {
+        this.id = id;
+        this.menuName = menuName;
+        this.user = user;
+        this.food = food;
+        this.description = description;
+    }
+
 
 
     public Integer getId() {
@@ -43,7 +57,7 @@ public class Menu {
     public void setUser(User user) {
         this.user = user;
     }
-/*
+
     public Padecimientos getPadecimientos() {
         return padecimientos;
     }
@@ -51,7 +65,7 @@ public class Menu {
     public void setPadecimientosId(Padecimientos padecimientos) {
         this.padecimientos = padecimientos;
     }
-*/
+
     public String getFood() {
         return food;
     }
