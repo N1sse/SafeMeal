@@ -1,20 +1,27 @@
 package com.ucr.smas.model;
 
+
+
+
 import jakarta.persistence.*;
-import org.springframework.data.annotation.Id;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Entity
 @Table(name="tb-menu")
 public class Menu {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private String menuName;
 
+    @Autowired
     @JoinColumn(name="user_id")
     private User user;
    @JoinColumn(name="padecimientos_id")
-    private Padecimientos padecimientos;
+    private Padecimiento padecimientos;
+
     private String food;
     private String description;
 
@@ -31,8 +38,13 @@ public class Menu {
         this.food = food;
         this.description = description;
     }
-
-
+    /*
+    public Menu(Integer id, String menuName,String food, String description) {
+        this.id = id;
+        this.menuName = menuName;
+        this.food = food;
+        this.description = description;
+    }*/
 
     public Integer getId() {
         return id;
@@ -58,13 +70,13 @@ public class Menu {
         this.user = user;
     }
 
-    public Padecimientos getPadecimientos() {
-        return padecimientos;
-    }
+        public Padecimiento getPadecimientos() {
+            return padecimientos;
+        }
 
-    public void setPadecimientosId(Padecimientos padecimientos) {
-        this.padecimientos = padecimientos;
-    }
+        public void setPadecimientosId(Padecimiento padecimientos) {
+            this.padecimientos = padecimientos;
+        }
 
     public String getFood() {
         return food;
