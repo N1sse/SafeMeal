@@ -6,6 +6,8 @@ package com.ucr.smas.model;
 import jakarta.persistence.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
+
 @Entity
 @Table(name="tb-menu")
 public class Menu {
@@ -16,15 +18,14 @@ public class Menu {
 
     private String menuName;
 
-    @Autowired
+    @ManyToOne
     @JoinColumn(name="user_id")
     private User user;
+    @ManyToOne
    @JoinColumn(name="padecimientos_id")
     private Padecimiento padecimientos;
-
     private String food;
     private String description;
-
 
 
     public Menu() {
@@ -38,13 +39,6 @@ public class Menu {
         this.food = food;
         this.description = description;
     }
-    /*
-    public Menu(Integer id, String menuName,String food, String description) {
-        this.id = id;
-        this.menuName = menuName;
-        this.food = food;
-        this.description = description;
-    }*/
 
     public Integer getId() {
         return id;
@@ -70,11 +64,9 @@ public class Menu {
         this.user = user;
     }
 
-        public Padecimiento getPadecimientos() {
-            return padecimientos;
-        }
+    public Padecimiento getPadecimientos() {return padecimientos;}
 
-        public void setPadecimientosId(Padecimiento padecimientos) {
+    public void setPadecimientosId(Padecimiento padecimientos) {
             this.padecimientos = padecimientos;
         }
 
@@ -93,4 +85,7 @@ public class Menu {
     public void setDescription(String description) {
         this.description = description;
     }
+
+
+
 }

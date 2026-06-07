@@ -38,10 +38,10 @@ public class MenuController {
     @PostMapping("/add")
     public ResponseEntity<?> addMenu(@RequestBody MenuDTO menu){
         if (service.addMenu(menu)==null){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El menu se encuentra vacío,");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El menu se encuentra vacío o ya ha sido registrado anteriormente");
         }
         service.addMenu(menu);
-        return ResponseEntity.ok("El mené se registró con éxito");
+        return ResponseEntity.ok("El menú se registró con éxito");
     }
 
     @PutMapping("/update/{id}")
@@ -55,11 +55,10 @@ public class MenuController {
 
     @DeleteMapping("/deleted/{id}")
     public ResponseEntity<?> deleteById(@PathVariable Integer id){
-        Menu menuFound= service.getMenuById(id);
-        if (menuFound==null){
+        if (service.getMenuById(id)==null){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El menu con ese ID no existe,");
         }
-        service.deleteMenu(menuFound.getId());
+        service.deleteMenu(id);
         return ResponseEntity.ok("Menu borrado con éxito");
     }
 

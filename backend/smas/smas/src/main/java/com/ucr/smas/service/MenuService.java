@@ -8,6 +8,7 @@ import com.ucr.smas.repository.MenuJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,6 +23,7 @@ public class MenuService {
     private MenuJpaRepository repository;
 
 
+
     public MenuService() {
     }
 
@@ -30,21 +32,34 @@ public class MenuService {
     }
 
     public Menu getMenuById(Integer id){
-        return repository.getById(id);
+        Optional<Menu> menuExists = repository.findById(id);
+        if (menuExists.isPresent()) {
+            return menuExists.get();
+        }
+        return null;
+
     }
 
     public Menu addMenu(MenuDTO menu){
+        if(!repository.existsByMenuName(menu.getMenuName())){
+            User user = userService.getById(menu.getUserId());
+            if(user==null){
+                return null;
+            }
+            Padecimiento padecimientos = padecimientoService.getById(menu.getPadecimientoId());
+            if(padecimientos==null){
+                return null;
+            }
+            Menu menuTemp = new Menu();
+            menuTemp.setMenuName(menu.getMenuName());
+            menuTemp.setFood(menu.getFood());
+            menuTemp.setDescription(menu.getDescription());
+            menuTemp.setUser(user);
+            menuTemp.setPadecimientosId(padecimientos);
+            return repository.save(menuTemp);
 
-        User user= userService.getById(menu.getUserId());
-        Padecimiento padecimientos= padecimientoService.getById(menu.getPadecimientoId());
-        Menu menuTemp= new Menu();
-        menuTemp.setMenuName(menu.getMenuName());
-        menuTemp.setFood(menu.getFood());
-        menuTemp.setDescription(menu.getDescription());
-        menuTemp.setUser(user);
-        menuTemp.setPadecimientosId(padecimientos);
-        return repository.save(menuTemp);
-
+        }
+        return null;
     }
 
     public Menu updateMenu(Integer id, Menu menu){
@@ -75,8 +90,17 @@ public class MenuService {
         if (menuExists.isPresent()) {
             repository.deleteById(id);
             return menuExists.get();
-        } else {
-            return null;
         }
+        return null;
+
     }
+
+    public Menu getByName(String name){
+        if (repository.existsByMenuName(name)){
+            return repository.getByMenuName(name);
+        }
+        return null;
+    }
+
+
 }
