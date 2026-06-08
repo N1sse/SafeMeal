@@ -7,7 +7,8 @@ import jakarta.persistence.*;
 
 public class Padecimiento {
 
-        @Id
+
+                             @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Integer id;
 
