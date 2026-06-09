@@ -29,16 +29,20 @@ public class UserDTO {
     )
     private String password;
 
+    @NotBlank(message = "El espacio del rol no puede quedar vacío")
+    private String role;
+
     //metodos contructores
     public UserDTO() {
     }
 
-    public UserDTO(String name, String gender, LocalDate dateBirth, String email, String password) {
+    public UserDTO(String name, String gender, LocalDate dateBirth, String email, String password, String role) {
         this.name = name;
         this.gender = gender;
         this.dateBirth = dateBirth;
         this.email = email;
         this.password = password;
+        this.role = role;
     }
 
     //sets y gets
@@ -80,5 +84,13 @@ public class UserDTO {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }//fin UserDTO
