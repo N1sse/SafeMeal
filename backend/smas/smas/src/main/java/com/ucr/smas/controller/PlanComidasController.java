@@ -1,64 +1,63 @@
 package com.ucr.smas.controller;
 
-import com.ucr.smas.model.Menu;
-import com.ucr.smas.model.dto.MenuDTO;
-import com.ucr.smas.service.MenuService;
+import com.ucr.smas.model.PlanComidas;
+import com.ucr.smas.model.dto.PlanComidasDTO;
+import com.ucr.smas.service.PlanComidasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/menu")
-public class MenuController {
+public class PlanComidasController {
 
     @Autowired
-    private MenuService service;
+    private PlanComidasService service;
 
     @GetMapping("/all")
     public ResponseEntity<List<?>> getAll(){
-        List<Menu> menusList = service.findAll();
-        if (!menusList.isEmpty()){
-            return ResponseEntity.ok(menusList);
+        List<PlanComidas> planComidasList = service.findAll();
+        if (!planComidasList.isEmpty()){
+            return ResponseEntity.ok(planComidasList);
         }
         return ResponseEntity.noContent().build();
     }
 
     @GetMapping("/ById/{id}")
     public ResponseEntity<?> getById(@PathVariable Integer id){
-        Menu menuFound = service.getMenuById(id);
-        if (menuFound==null){
+        PlanComidas planComidasFound = service.getPlanById(id);
+        if (planComidasFound ==null){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El menu con ese ID no existe,");
         }
-        return ResponseEntity.ok(menuFound);
+        return ResponseEntity.ok(planComidasFound);
     }
     @PostMapping("/add")
-    public ResponseEntity<?> addMenu(@RequestBody MenuDTO menu){
-        if (service.addMenu(menu)==null){
+    public ResponseEntity<?> addPlan(@RequestBody PlanComidasDTO menu){
+        if (service.addPlan(menu)==null){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El menu se encuentra vacío o ya ha sido registrado anteriormente");
         }
-        service.addMenu(menu);
+        service.addPlan(menu);
         return ResponseEntity.ok("El menú se registró con éxito");
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> updateMenu(@PathVariable Integer id, @RequestBody Menu menu){
-        if (service.updateMenu(id, menu)==null){
+    public ResponseEntity<?> updatePlan(@PathVariable Integer id, @RequestBody PlanComidas planComidas){
+        if (service.updatePlan(id, planComidas)==null){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El menu se encuentra vacío,");
         }
-        service.updateMenu(id, menu);
+        service.updatePlan(id, planComidas);
         return ResponseEntity.ok("El menu se actualizó con éxito");
     }
 
     @DeleteMapping("/deleted/{id}")
     public ResponseEntity<?> deleteById(@PathVariable Integer id){
-        if (service.getMenuById(id)==null){
+        if (service.getPlanById(id)==null){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El menu con ese ID no existe,");
         }
-        service.deleteMenu(id);
+        service.deletePlan(id);
         return ResponseEntity.ok("Menu borrado con éxito");
     }
 

@@ -4,19 +4,16 @@ package com.ucr.smas.model;
 
 
 import jakarta.persistence.*;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.ArrayList;
 
 @Entity
 @Table(name="tb-menu")
-public class Menu {
+public class PlanComidas {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String menuName;
+    private String planName;
 
     @ManyToOne
     @JoinColumn(name="user_id")
@@ -28,13 +25,13 @@ public class Menu {
     private String description;
 
 
-    public Menu() {
+    public PlanComidas() {
     }
 
 
-    public Menu(Integer id, String menuName, User user, String food, String description) {
+    public PlanComidas(Integer id, String planName, User user, String food, String description) {
         this.id = id;
-        this.menuName = menuName;
+        this.planName = planName;
         this.user = user;
         this.food = food;
         this.description = description;
@@ -48,12 +45,12 @@ public class Menu {
         this.id = id;
     }
 
-    public String getMenuName() {
-        return menuName;
+    public String getPlanName() {
+        return planName;
     }
 
-    public void setMenuName(String menuName) {
-        this.menuName = menuName;
+    public void setPlanName(String planName) {
+        this.planName = planName;
     }
 
     public User getUser() {
