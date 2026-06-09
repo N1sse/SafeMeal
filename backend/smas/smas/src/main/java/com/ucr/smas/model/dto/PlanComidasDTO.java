@@ -1,21 +1,21 @@
 package com.ucr.smas.model.dto;
 
 
-public class MenuDTO {
+public class PlanComidasDTO {
 
-    private String menuName;
+    private String planName;
     private Integer userId;
     private Integer padecimientoId;
     private String food;
     private String description;
 
 
-    public String getMenuName() {
-        return menuName;
+    public String getPlanName() {
+        return planName;
     }
 
-    public void setMenuName(String menuName) {
-        this.menuName = menuName;
+    public void setMenuName(String planName) {
+        this.planName = planName;
     }
 
     public String getFood() {
