@@ -11,8 +11,7 @@ public class LoginDTO {
     private String email;
 
     @NotBlank(message = "El espacio de la contraseña no puede quedar vacío.")
-    @Size(min = 8, max = 64, message = "La contraseña debe tener entre 8 y 64 caracteres.")
-    private String password;
+  private String password;
 
     public LoginDTO() {
     }

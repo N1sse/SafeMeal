@@ -17,17 +17,19 @@ public class User {
     private LocalDate dateBirth;
     private String email;
     private String password;
+    private String role;
 
     public User() {
     }
 
-    public User(Integer id, String name, String gender, LocalDate dateBirth, String email, String password) {
+    public User(Integer id, String name, String gender, LocalDate dateBirth, String email, String password, String role) {
         this.id = id;
         this.name = name;
         this.gender = gender;
         this.dateBirth = dateBirth;
         this.email = email;
         this.password = password;
+        this.role = role;
     }
 
     public Integer getId() {
@@ -77,4 +79,12 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-}
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+}//fin user

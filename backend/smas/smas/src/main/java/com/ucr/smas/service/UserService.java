@@ -48,6 +48,7 @@ public class UserService {
         userTemp.setDateBirth(user.getDateBirth());
         userTemp.setEmail(user.getEmail());
         userTemp.setPassword(user.getPassword());
+        userTemp.setRole(user.getRole());
         return userRepository.save(userTemp);
     }//fin add
 
@@ -82,6 +83,11 @@ public class UserService {
             //Para poder verificar que el espacio no este en null y actulizar la contraseña
             if (user.getPassword()!=null){
                 userTemp.setPassword(user.getPassword());
+            }
+
+            //Para poder verificar que el espacio no este en null y actualizar el rol
+            if (user.getRole()!=null){
+                userTemp.setRole(user.getRole());
             }
 
             //Para que se guarde
