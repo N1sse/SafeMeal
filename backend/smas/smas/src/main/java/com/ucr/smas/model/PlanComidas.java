@@ -24,6 +24,7 @@ public class PlanComidas {
     private Padecimiento padecimientos;
     private String food;
     private String description;
+    @Enumerated(EnumType.STRING)
     private Status nivelRecomendacion;
 
     public PlanComidas() {

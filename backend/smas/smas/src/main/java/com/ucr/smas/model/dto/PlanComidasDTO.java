@@ -4,13 +4,21 @@ import org.hibernate.engine.spi.Status;
 
 public class PlanComidasDTO {
 
+
     private String planName;
+
     private Integer userId;
+
     private Integer padecimientoId;
+
     private String food;
+
     private String description;
+
     private Status nivelRecomendacion;
+
     private String platilloEjemplo;
+
     private String image;
 
 
