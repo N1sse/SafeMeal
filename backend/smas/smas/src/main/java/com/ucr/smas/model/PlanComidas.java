@@ -4,9 +4,10 @@ package com.ucr.smas.model;
 
 
 import jakarta.persistence.*;
+import org.hibernate.engine.spi.Status;
 
 @Entity
-@Table(name="tb-menu")
+@Table(name="tb-planComidas")
 public class PlanComidas {
 
     @Id
@@ -23,18 +24,19 @@ public class PlanComidas {
     private Padecimiento padecimientos;
     private String food;
     private String description;
-
+    private Status nivelRecomendacion;
 
     public PlanComidas() {
     }
 
 
-    public PlanComidas(Integer id, String planName, User user, String food, String description) {
+    public PlanComidas(Integer id, String planName, User user, String food, String description, Status nivelRecomendacion) {
         this.id = id;
         this.planName = planName;
         this.user = user;
         this.food = food;
         this.description = description;
+        this.nivelRecomendacion = nivelRecomendacion;
     }
 
     public Integer getId() {
@@ -83,6 +85,15 @@ public class PlanComidas {
         this.description = description;
     }
 
+    public void setPadecimientos(Padecimiento padecimientos) {
+        this.padecimientos = padecimientos;
+    }
 
+    public Status getNivelRecomendacion() {
+        return nivelRecomendacion;
+    }
 
+    public void setNivelRecomendacion(Status nivelRecomendacion) {
+        this.nivelRecomendacion = nivelRecomendacion;
+    }
 }

@@ -1,5 +1,6 @@
 package com.ucr.smas.model.dto;
-
+import jakarta.persistence.*;
+import org.hibernate.engine.spi.Status;
 
 public class PlanComidasDTO {
 
@@ -8,6 +9,9 @@ public class PlanComidasDTO {
     private Integer padecimientoId;
     private String food;
     private String description;
+    private Status nivelRecomendacion;
+    private String platilloEjemplo;
+    private String image;
 
 
     public String getPlanName() {
