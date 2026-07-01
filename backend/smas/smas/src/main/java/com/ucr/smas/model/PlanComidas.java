@@ -1,10 +1,6 @@
 package com.ucr.smas.model;
 
-
-
-
 import jakarta.persistence.*;
-import org.hibernate.engine.spi.Status;
 
 @Entity
 @Table(name="tb-planComidas")
@@ -19,22 +15,31 @@ public class PlanComidas {
     @ManyToOne
     @JoinColumn(name="user_id")
     private User user;
+
     @ManyToOne
-   @JoinColumn(name="padecimientos_id")
+    @JoinColumn(name="padecimientos_id")
     private Padecimiento padecimientos;
+
     private String food;
+
     private String description;
+
     @Enumerated(EnumType.STRING)
-    private Status nivelRecomendacion;
+    private nivelRecomendacion nivelRecomendacion;
 
     public PlanComidas() {
     }
 
+    public PlanComidas(Integer id, String planName, User user,
+                       Padecimiento padecimientos,
+                       String food,
+                       String description,
+                       nivelRecomendacion nivelRecomendacion) {
 
-    public PlanComidas(Integer id, String planName, User user, String food, String description, Status nivelRecomendacion) {
         this.id = id;
         this.planName = planName;
         this.user = user;
+        this.padecimientos = padecimientos;
         this.food = food;
         this.description = description;
         this.nivelRecomendacion = nivelRecomendacion;
@@ -64,11 +69,13 @@ public class PlanComidas {
         this.user = user;
     }
 
-    public Padecimiento getPadecimientos() {return padecimientos;}
+    public Padecimiento getPadecimientos() {
+        return padecimientos;
+    }
 
-    public void setPadecimientosId(Padecimiento padecimientos) {
-            this.padecimientos = padecimientos;
-        }
+    public void setPadecimientos(Padecimiento padecimientos) {
+        this.padecimientos = padecimientos;
+    }
 
     public String getFood() {
         return food;
@@ -86,15 +93,15 @@ public class PlanComidas {
         this.description = description;
     }
 
-    public void setPadecimientos(Padecimiento padecimientos) {
-        this.padecimientos = padecimientos;
-    }
-
-    public Status getNivelRecomendacion() {
+    public nivelRecomendacion getNivelRecomendacion() {
         return nivelRecomendacion;
     }
 
-    public void setNivelRecomendacion(Status nivelRecomendacion) {
+    public void setNivelRecomendacion(nivelRecomendacion nivelRecomendacion) {
         this.nivelRecomendacion = nivelRecomendacion;
+    }
+
+    public void setPadecimientosId(Padecimiento padecimientos) {
+        this.padecimientos = padecimientos;
     }
 }

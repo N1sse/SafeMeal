@@ -3,7 +3,7 @@ package com.ucr.smas.model;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "tb_padecimientos")
+@Table(name = "tb-padecimientos")
 public class Padecimiento {
 
 
