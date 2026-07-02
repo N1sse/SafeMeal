@@ -1,0 +1,61 @@
+"id";"description";"food";"nivel_recomendacion";"padecimiento_id"
+1;"Apta porque no contiene lactosa";"Leche sin lacteos";"RECOMENDADO";1
+2;"Libre de lactosa";"Pollo";"RECOMENDADO";1
+3;"Libre de lactosa";"Arroz";"RECOMENDADO";1
+4;"Contiene pocas lactosa, consumir en pequeñas cantidades";"Queso maduro";"PRECAUCION";1
+5;"Alta en lactosa";"Leche entera";"EVITAR";1
+6;"Alta en lactosa";"Helado de leche";"EVITAR";1
+7;"Naturalmente libre de gluten";"Arroz";"RECOMENDADO";2
+8;"Libre de gluten";"Pollo";"RECOMENDADO";2
+9;"Libre de gluten";"Frijoles";"RECOMENDADO";2
+10;"Solo si esta certufucado libre de gluten";"Avena";"PRECAUCION";2
+11;"Contiene gluten";"Pan de trigo";"EVITAR";2
+12;"Contiene gluten";"Pasta de trigo";"EVITAR";2
+13;"Bajo indice glucemico";"Vegetales verdes";"RECOMENDADO";3
+14;"Proteina sin azucar";"Pollo";"RECOMENDADO";3
+15;"Libera energia lentamente";"Avena";"RECOMENDADO";3
+16;"Con moderacion por el azucar natural";"Fruta entera";"PRECAUCION";3
+17;"Elevan el azucar rapidamente";"Refrescos azucarados";"EVITAR";3
+18;"Alto contenido de azucar";"Pasteles";"EVITAR";3
+19;"Bajo en sodio";"Vegetales frescos";"RECOMENDADO";4
+20;"Rico en potasio";"Banano";"RECOMENDADO";4
+21;"Ayuda a la salud del corazon";"Avena";"RECOMENDADO";4
+22;"Moderar su contenido de sodio";"Queso";"PRECAUCION";4
+23;"Muy altos en sodio";"Embutidos";"EVITAR";4
+24;"Alta en sodio";"Comidas enlatadas";"EVITAR";4
+25;"Ayuda a reducir el colesterol";"Avena";"RECOMENDADO";5
+26;"Aporta grasa saludables";"Pescado";"RECOMENDADO";5
+27;"Bajo en grasas";"Vegetales";"RECOMENDADO";5
+28;"Moderar la yema";"Huevos";"PRECAUCION";5
+29;"Altas en grasa saturada";"Frituras";"EVITAR";5
+30;"Alta en grasa saturada";"Mantequilla";"EVITAR";5
+31;"Suave para el estomago";"Arroz";"RECOMENDADO";6
+32;"Facil de digerir";"Pollo cocido";"RECOMENDADO";6
+33;"Suave y nutritiva";"Manzana";"RECOMENDADO";6
+34;"Moderar porque puede irritar";"Cafe";"PRECAUCION";6
+35;"Irrita la mucosa del estomago";"Comida picante";"EVITAR";6
+36;"Acidos, pueden causar molestia";"Citricos";"EVITAR";6
+37;"Ricos en hierro";"Frijoles";"RECOMENDADO";7
+38;"Rica en hierro";"Espinaca";"RECOMENDADO";7
+39;"Buena fuente de hierro";"Carne roja magra";"RECOMENDADO";7
+40;"Reduce la absorcion de hierro";"Te";"PRECAUCION";7
+41;"No aportan nutrientes";"Refrscos";"EVITAR";7
+42;"Reducen la absorcion de hierro";"Exceso de lacteos";"EVITAR";7
+43;"Bajos en calorias";"Vegetales";"RECOMENDADO";8
+44;"Proteina baja en grasa";"Pollo a la plancha";"RECOMENDADO";8
+45;"Saludable con moderacion";"Fruta";"RECOMENDADO";8
+46;"Moderar la porcion";"Pan integral";"PRECAUCION";8
+47;"Alta en calorias y grasa";"Comida rapida";"EVITAR";8
+48;"Muchas calorias vacias";"Bebida azucarada";"EVITAR";8
+49;"Bajo en potasio";"Arroz";"RECOMENDADO";9
+50;"Bajo en potasio";"Manzana";"RECOMENDADO";9
+51;"Bajo en potasio";"Coliflor";"RECOMENDADO";9
+52;"Controlar la cantidad de proteina";"Carne";"PRECAUCION";9
+53;"Alto en potasio";"Banano";"EVITAR";9
+54;"Altos en potasio";"Embutidos";"EVITAR";9
+55;"Seguro sin mani";"Arroz";"RECOMENDADO";10
+56;"Seguro sin mani";"Pollo";"RECOMENDADO";10
+57;"Seguras sin mani";"Frutas";"RECOMENDADO";10
+58;"Riesgo de contaminacion cruzada";"Productos a granel";"PRECAUCION";10
+59;"Causa la reaccion alergica";"Mani";"EVITAR";10
+60;"Contiene mani";"Mantequilla de mani";"EVITAR";10
