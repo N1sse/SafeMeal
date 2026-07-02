@@ -40,7 +40,7 @@
 
 ## Estado del proyecto
 
-Proyecto terminado y con el frontend listo.
+Proyecto terminado y con el frontend(https://github.com/N1sse/Frontend_SMAS.git) listo.
 
 ---
 
@@ -92,6 +92,8 @@ Proyecto terminado y con el frontend listo.
 | 30/06/2026 | 64a5284 | Agregar cambios necesarios para el módulo de recomendaciones | N1sse |
 | 30/06/2026 | 7738b86 | feat: agregar servicio y controlador de recomendaciones | Gaby683 |
 | 01/07/2026 | 0b79361 | Agregando ciertas partes y modificando el backend, para que funcione como se espera | N1sse |
+| 01/07/2026 | 5a81b70 | Actualizando documentos | N1sse |
+| 01/07/2026 | b4927db | Agregar datos en MySQL | N1sse |
 
 ---
 
