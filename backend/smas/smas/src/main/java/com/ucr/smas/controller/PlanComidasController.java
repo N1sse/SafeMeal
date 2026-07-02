@@ -2,6 +2,7 @@ package com.ucr.smas.controller;
 
 import com.ucr.smas.model.PlanComidas;
 import com.ucr.smas.model.dto.PlanComidasDTO;
+import com.ucr.smas.model.dto.PlanDetalleDTO;
 import com.ucr.smas.service.PlanComidasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,6 +13,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/planComidas")
+@CrossOrigin(origins = "*")
 public class PlanComidasController {
 
     @Autowired
@@ -34,17 +36,27 @@ public class PlanComidasController {
         }
         return ResponseEntity.ok(planComidasFound);
     }
+
+    @GetMapping("/detalle/{id}")
+    public ResponseEntity<?> getDetalle(@PathVariable Integer id){
+        PlanDetalleDTO detalle = service.getPlanDetalle(id);
+        if (detalle == null){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El plan con ese ID no existe.");
+        }
+        return ResponseEntity.ok(detalle);
+    }
+
     @PostMapping("/add")
     public ResponseEntity<?> addPlan(@RequestBody PlanComidasDTO menu){
-        if (service.addPlan(menu)==null){
+        PlanComidas resultado = service.addPlan(menu);
+        if (resultado == null){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El menu se encuentra vacío o ya ha sido registrado anteriormente");
         }
-        service.addPlan(menu);
         return ResponseEntity.ok("El menú se registró con éxito");
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> updatePlan(@PathVariable Integer id, @RequestBody PlanComidas planComidas){
+    public ResponseEntity<?> updatePlan(@PathVariable Integer id, @RequestBody PlanComidasDTO planComidas){
         if (service.updatePlan(id, planComidas)==null){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("El menu se encuentra vacío,");
         }

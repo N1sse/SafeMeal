@@ -14,11 +14,4 @@ public interface PadecimientoJpaRepository extends JpaRepository<Padecimiento, I
     Padecimiento getById(Integer id);
 
     Padecimiento getByNombre(String nombre);
-
-
-    //--------------------------------------------------------
-    // Conectar con los padeciminetos
-    List<PlanComidas> findByUser_Id(Integer userId);
-    // Para mostrar el catalogo
-    List<PlanComidas> findByPadecimientos_IdInAndUser_IdIsNull(List<Integer> ids);
 }

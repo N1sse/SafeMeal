@@ -10,10 +10,7 @@ import java.util.List;
 @Repository
 public interface PlanComidasJpaRepository extends JpaRepository<PlanComidas, Integer> {
     PlanComidas getById(Integer id);
-    PlanComidas getByPlanName(String planName);
-    boolean existsByPlanName(String planName);
 
+    // Planes de comida
     List<PlanComidas> findByUser_Id(Integer userId);
-
-    List<PlanComidas> findByPadecimientos_IdInAndUser_IdIsNull(List<Integer> ids);
 }

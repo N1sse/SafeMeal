@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/recomendaciones")
+@CrossOrigin(origins = "*")
 public class RecomendacionController {
 
     @Autowired

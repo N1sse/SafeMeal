@@ -1,49 +1,19 @@
 package com.ucr.smas.model.dto;
 import jakarta.persistence.*;
 import org.hibernate.engine.spi.Status;
+import com.ucr.smas.model.nivelRecomendacion;
 
 public class PlanComidasDTO {
 
-
-    private String planName;
-
     private Integer userId;
-
     private Integer padecimientoId;
 
-    private String food;
-
-    private String description;
-
-    private Status nivelRecomendacion;
-
-    private String platilloEjemplo;
-
-    private String image;
-
-
-    public String getPlanName() {
-        return planName;
+    public PlanComidasDTO() {
     }
 
-    public void setMenuName(String planName) {
-        this.planName = planName;
-    }
-
-    public String getFood() {
-        return food;
-    }
-
-    public void setFood(String food) {
-        this.food = food;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    public PlanComidasDTO(Integer userId, Integer padecimientoId) {
+        this.userId = userId;
+        this.padecimientoId = padecimientoId;
     }
 
     public Integer getUserId() {
@@ -61,6 +31,5 @@ public class PlanComidasDTO {
     public void setPadecimientoId(Integer padecimientoId) {
         this.padecimientoId = padecimientoId;
     }
-
 
 }
